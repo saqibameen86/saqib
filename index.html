@@ -20,199 +20,215 @@
 
 <style>
 :root {
-  --bg:      #06090f;
-  --bg2:     #090f1a;
-  --bg3:     #0c1320;
-  --surface: #0f1b2d;
-  --surface2:#132035;
-  --border:  #192b42;
-  --border2: #1e3350;
-  --cta:      #10b981;
-  --cta-dark: #059669;
-  --cta-glow: rgba(16,185,129,0.15);
-  --cta-dim:  rgba(16,185,129,0.08);
-  --gold:     #f59e0b;
-  --gold2:    #fbbf24;
-  --gold-dim: rgba(245,158,11,0.10);
-  --gold-glow:rgba(245,158,11,0.04);
-  --text:  #eef2f9;
-  --text2: #8ba8c8;
-  --text3: #3a5878;
+  --bg:      #f9f8f5;
+  --bg2:     #f2f0eb;
+  --bg3:     #eceae4;
+  --surface: #ffffff;
+  --surface2:#f8f7f4;
+  --border:  #e0dbd2;
+  --border2: #cdc7bc;
+  --navy:    #0e2444;
+  --navy2:   #1a3a6b;
+  --cta:      #0ea5e9;
+  --cta-dark: #0284c7;
+  --cta-glow: rgba(14,165,233,0.12);
+  --cta-dim:  rgba(14,165,233,0.07);
+  --green:    #10b981;
+  --gold:     #b86e0a;
+  --gold-dim: rgba(184,110,10,0.08);
+  --text:     #0e2444;
+  --text2:    #4a6080;
+  --text3:    #8fa0b8;
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
 
-/* STICKY */
-.sticky-cta{position:fixed;bottom:28px;right:28px;z-index:200;background:var(--cta);color:#fff;padding:13px 22px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 8px 32px rgba(16,185,129,0.4);transition:all 0.2s;display:flex;align-items:center;gap:8px;border-radius:40px;animation:bounceIn 0.8s 2s ease both}
-.sticky-cta:hover{background:var(--cta-dark);transform:translateY(-3px)}
+/* STICKY CTA */
+.sticky-cta{position:fixed;bottom:28px;right:28px;z-index:200;background:var(--navy);color:#fff;padding:13px 24px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 8px 28px rgba(14,36,68,0.25);transition:all 0.2s;display:flex;align-items:center;gap:8px;border-radius:40px;animation:bounceIn 0.8s 2s ease both}
+.sticky-cta:hover{background:var(--navy2);transform:translateY(-3px);box-shadow:0 12px 36px rgba(14,36,68,0.3)}
 @keyframes bounceIn{0%{opacity:0;transform:translateY(20px) scale(0.9)}60%{transform:translateY(-4px) scale(1.02)}100%{opacity:1;transform:translateY(0) scale(1)}}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:64px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(24px);background:rgba(6,9,15,0.92);border-bottom:1px solid var(--border)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold);letter-spacing:0.5px;text-decoration:none;white-space:nowrap}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:64px;display:flex;justify-content:space-between;align-items:center;background:rgba(249,248,245,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);letter-spacing:0.3px;text-decoration:none;white-space:nowrap}
 .nav-links{display:flex;gap:28px;list-style:none;align-items:center}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;font-weight:400;transition:color 0.2s;white-space:nowrap}
-.nav-links a:hover{color:var(--text)}
-.nav-cta-btn{background:var(--cta)!important;color:white!important;padding:8px 18px!important;font-weight:600!important;border-radius:40px!important}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;font-weight:500;transition:color 0.2s;white-space:nowrap}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta-btn{background:var(--cta)!important;color:white!important;padding:8px 18px!important;font-weight:600!important;border-radius:40px!important;transition:background 0.2s!important}
 .nav-cta-btn:hover{background:var(--cta-dark)!important}
 
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 260px;align-items:center;padding:100px 60px 80px;position:relative;gap:60px;overflow:hidden}
-.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(245,158,11,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(245,158,11,0.02) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 70% 80% at 30% 50%,black 30%,transparent 100%)}
-.hero-orb{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(16,185,129,0.04) 0%,rgba(245,158,11,0.025) 40%,transparent 70%);top:50%;left:25%;transform:translate(-50%,-50%);pointer-events:none}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 260px;align-items:center;padding:100px 60px 80px;position:relative;gap:60px;overflow:hidden;background:var(--surface)}
+.hero-accent{position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--cta),var(--navy))}
+.hero-dots{position:absolute;right:0;top:0;bottom:0;width:40%;background-image:radial-gradient(circle,rgba(14,36,68,0.06) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,0.4))}
 .hero-left{position:relative;z-index:2;max-width:660px}
-.badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid rgba(245,158,11,0.25);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:500;color:var(--gold);margin-bottom:28px;animation:fadeUp 0.5s ease both}
-.badge-dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 2s infinite}
+
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid rgba(184,110,10,0.2);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:600;color:var(--gold);margin-bottom:28px;animation:fadeUp 0.5s ease both}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
-h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,80px);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:12px;animation:fadeUp 0.5s 0.1s ease both}
-.name-hl{color:transparent;-webkit-text-stroke:1px var(--gold);font-style:italic}
-.hero-role{font-size:12px;font-weight:400;color:var(--text3);letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;animation:fadeUp 0.5s 0.2s ease both}
+
+h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,80px);font-weight:900;line-height:1.05;letter-spacing:-2px;color:var(--navy);margin-bottom:12px;animation:fadeUp 0.5s 0.1s ease both}
+.name-hl{color:var(--cta);font-style:italic}
+.hero-role{font-size:12px;font-weight:500;color:var(--text3);letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;animation:fadeUp 0.5s 0.2s ease both}
 .hero-desc{font-size:15px;color:var(--text2);line-height:1.85;max-width:520px;margin-bottom:40px;font-weight:300;animation:fadeUp 0.5s 0.3s ease both}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp 0.5s 0.4s ease both}
-.btn-green{background:var(--cta);color:white;padding:14px 32px;font-size:14px;font-weight:600;text-decoration:none;border-radius:40px;transition:all 0.2s;box-shadow:0 4px 20px rgba(16,185,129,0.3);display:inline-block;border:none;cursor:pointer;font-family:inherit}
-.btn-green:hover{background:var(--cta-dark);transform:translateY(-2px);box-shadow:0 8px 28px rgba(16,185,129,0.4)}
-.btn-ghost{background:transparent;color:var(--text);padding:14px 32px;font-size:14px;font-weight:400;text-decoration:none;border:1px solid var(--border2);border-radius:40px;transition:all 0.2s;display:inline-block}
-.btn-ghost:hover{border-color:var(--text2);transform:translateY(-2px)}
+
+.btn-blue{background:var(--cta);color:white;padding:14px 32px;font-size:14px;font-weight:600;text-decoration:none;border-radius:40px;transition:all 0.2s;box-shadow:0 4px 16px rgba(14,165,233,0.25);display:inline-block;border:none;cursor:pointer;font-family:inherit}
+.btn-blue:hover{background:var(--cta-dark);transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:white;padding:14px 32px;font-size:14px;font-weight:500;text-decoration:none;border-radius:40px;transition:all 0.2s;display:inline-block}
+.btn-navy:hover{background:var(--navy2);transform:translateY(-2px)}
 
 /* STATS PANEL */
-.hero-stats-panel{position:relative;z-index:2;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px 28px;display:flex;flex-direction:column;gap:24px;animation:fadeUp 0.5s 0.5s ease both}
-.hero-stats-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cta),var(--gold));border-radius:16px 16px 0 0}
+.hero-stats-panel{position:relative;z-index:2;background:var(--navy);border-radius:20px;padding:36px 28px;display:flex;flex-direction:column;gap:26px;box-shadow:0 16px 48px rgba(14,36,68,0.18);animation:fadeUp 0.5s 0.5s ease both}
+.hero-stats-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cta),var(--green));border-radius:20px 20px 0 0}
 .stat-row{text-align:center}
-.stat-num{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--gold);line-height:1;display:block}
-.stat-lbl{font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-top:4px;display:block}
-.stat-div{height:1px;background:var(--border)}
+.stat-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#fbbf24;line-height:1;display:block}
+.stat-lbl{font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;display:block}
+.stat-div{height:1px;background:rgba(255,255,255,0.1)}
 
 /* SECTIONS */
 section{padding:100px 60px;position:relative;z-index:1}
 .sec-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--cta);margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .sec-label::before{content:'';width:28px;height:1px;background:var(--cta)}
-h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;line-height:1.1;margin-bottom:48px;letter-spacing:-0.5px}
-h2 em{color:var(--gold);font-style:italic}
+h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);font-weight:700;line-height:1.1;margin-bottom:48px;letter-spacing:-0.5px;color:var(--navy)}
+h2 em{color:var(--cta);font-style:italic}
 
 /* IMPACT */
 #impact{background:var(--bg2)}
-.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.impact-card{background:var(--surface);border:1px solid var(--border);padding:40px 32px;transition:all 0.3s;position:relative;overflow:hidden;opacity:0;transform:translateY(24px)}
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.impact-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:36px 28px;transition:all 0.3s;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);box-shadow:0 2px 8px rgba(14,36,68,0.05)}
 .impact-card.show{opacity:1;transform:translateY(0)}
-.impact-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cta),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
-.impact-card:hover::after{transform:scaleX(1)}
-.impact-card:hover{background:var(--surface2);transform:translateY(-4px)!important}
+.impact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cta),var(--navy));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.impact-card:hover::before{transform:scaleX(1)}
+.impact-card:hover{transform:translateY(-5px)!important;box-shadow:0 12px 36px rgba(14,36,68,0.1)}
 .impact-icon{font-size:28px;margin-bottom:20px;display:block}
-.impact-num{font-family:'Playfair Display',serif;font-size:50px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:8px}
-.impact-title{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);margin-bottom:12px}
+.impact-num{font-family:'Playfair Display',serif;font-size:50px;font-weight:900;color:var(--navy);line-height:1;margin-bottom:8px}
+.impact-title{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
 .impact-desc{font-size:13px;color:var(--text2);line-height:1.7;font-weight:300}
-.impact-desc strong{color:var(--gold2);font-weight:500}
+.impact-desc strong{color:var(--navy);font-weight:600}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:200px 1fr 1fr;gap:48px;align-items:start}
-.about-photo{width:200px;height:240px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;position:relative;flex-shrink:0}
-.about-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
-.photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--text3)}
-.photo-placeholder span{font-size:48px}
+.about-photo{width:200px;height:240px;background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--text3)}
+.photo-placeholder span{font-size:44px}
 .photo-placeholder p{font-size:10px;letter-spacing:1px;text-transform:uppercase;text-align:center;padding:0 16px;line-height:1.5}
 .about-text p{font-size:14px;color:var(--text2);line-height:1.9;margin-bottom:18px;font-weight:300}
-.about-text p strong{color:var(--gold);font-weight:500}
+.about-text p strong{color:var(--navy);font-weight:600}
 .tags-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.tag{font-size:11px;padding:4px 12px;background:var(--gold-dim);border:1px solid rgba(245,158,11,0.2);color:var(--text2);border-radius:20px}
+.tag{font-size:11px;padding:4px 12px;background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.2);color:var(--navy2);border-radius:20px;font-weight:500}
 .creds{display:flex;flex-direction:column;gap:10px}
 .cred-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
-.cred{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold);transition:all 0.2s;opacity:0;transform:translateX(16px)}
+.cred{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--navy);border-radius:0 10px 10px 0;transition:all 0.2s;opacity:0;transform:translateX(16px)}
 .cred.show{opacity:1;transform:translateX(0)}
-.cred:hover{background:var(--surface2)}
+.cred:hover{background:var(--surface2);border-left-color:var(--cta)}
 .cred-icon{font-size:16px;flex-shrink:0;margin-top:2px}
-.cred-name{font-size:12px;font-weight:500;color:var(--text);margin-bottom:2px}
+.cred-name{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:2px}
 .cred-by{font-size:10px;color:var(--text3)}
 
 /* EXPERTISE */
 #expertise{background:var(--bg2)}
-.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
-.exp-card{background:var(--surface);border:1px solid var(--border);padding:28px 22px;transition:all 0.3s;opacity:0;transform:translateY(16px)}
+.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.exp-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 22px;transition:all 0.3s;opacity:0;transform:translateY(16px);box-shadow:0 2px 8px rgba(14,36,68,0.04)}
 .exp-card.show{opacity:1;transform:translateY(0)}
-.exp-card:hover{background:var(--surface2);border-color:var(--border2);transform:translateY(-3px)!important}
+.exp-card:hover{transform:translateY(-4px)!important;box-shadow:0 10px 28px rgba(14,36,68,0.09);border-color:var(--cta)}
 .exp-lbl{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cta);margin-bottom:10px}
-.exp-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;margin-bottom:14px;line-height:1.3}
+.exp-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin-bottom:14px;color:var(--navy);line-height:1.3}
 .chips{display:flex;flex-wrap:wrap;gap:5px}
-.chip{font-size:10px;padding:3px 8px;background:var(--gold-glow);border:1px solid rgba(245,158,11,0.15);color:var(--text2);border-radius:20px}
+.chip{font-size:10px;padding:3px 8px;background:rgba(14,36,68,0.05);border:1px solid var(--border);color:var(--text2);border-radius:20px;font-weight:500}
 
 /* TIMELINE */
 .tl{position:relative;padding-left:40px}
-.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:var(--border)}
+.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(180deg,var(--cta),var(--navy))}
 .tl-item{position:relative;margin-bottom:52px;opacity:0;transform:translateX(-16px)}
 .tl-item.show{opacity:1;transform:translateX(0)}
-.tl-item::before{content:'';position:absolute;left:-44px;top:8px;width:8px;height:8px;background:var(--cta);border-radius:50%;box-shadow:0 0 10px rgba(16,185,129,0.5)}
+.tl-item::before{content:'';position:absolute;left:-45px;top:7px;width:10px;height:10px;background:var(--cta);border-radius:50%;box-shadow:0 0 0 3px rgba(14,165,233,0.18)}
 .tl-date{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cta);margin-bottom:6px}
-.tl-co{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.tl-co{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px;color:var(--navy)}
 .tl-role{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);margin-bottom:14px}
 .tl-list{list-style:none;display:flex;flex-direction:column;gap:7px}
 .tl-list li{font-size:13px;color:var(--text2);padding-left:16px;position:relative;line-height:1.6;font-weight:300}
 .tl-list li::before{content:'›';position:absolute;left:0;color:var(--cta);font-weight:700}
-.tl-list li strong{color:var(--gold2);font-weight:500}
+.tl-list li strong{color:var(--navy);font-weight:600}
 
 /* COMMUNITY */
+#community{background:var(--bg)}
 .comm-intro{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start;margin-bottom:48px}
-.comm-big{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);padding:32px 28px;border-radius:8px}
-.comm-num{font-family:'Playfair Display',serif;font-size:80px;font-weight:900;color:var(--gold);line-height:1}
-.comm-sub{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-top:6px;line-height:1.5}
-.comm-text{font-size:14px;color:var(--text2);line-height:1.9;font-weight:300}
-.comm-text strong{color:var(--gold);font-weight:500}
+.comm-big{background:var(--navy);border-radius:14px;padding:36px 28px;box-shadow:0 8px 32px rgba(14,36,68,0.12)}
+.comm-num{font-family:'Playfair Display',serif;font-size:80px;font-weight:900;color:#fbbf24;line-height:1}
+.comm-sub{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:6px;line-height:1.5}
+.comm-green{margin-top:16px;font-size:13px;color:var(--green);font-weight:600}
+.comm-text{font-size:14px;color:var(--text2);line-height:1.9;font-weight:300;padding-top:4px}
+.comm-text strong{color:var(--navy);font-weight:600}
 .events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px}
-.event-card{background:var(--surface);border:1px solid var(--border);padding:24px 20px;transition:all 0.3s;opacity:0;transform:translateY(16px);border-radius:8px}
+.event-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 20px;transition:all 0.3s;opacity:0;transform:translateY(16px);box-shadow:0 2px 8px rgba(14,36,68,0.04)}
 .event-card.show{opacity:1;transform:translateY(0)}
-.event-card:hover{border-color:var(--gold);background:var(--surface2);transform:translateY(-3px)!important}
+.event-card:hover{border-color:var(--cta);transform:translateY(-3px)!important;box-shadow:0 10px 28px rgba(14,36,68,0.09)}
 .event-type{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cta);margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .event-type::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--cta)}
-.event-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.3}
+.event-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.3}
 .event-desc{font-size:12px;color:var(--text2);line-height:1.6;font-weight:300}
-.event-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:11px;font-weight:500;color:var(--gold);text-decoration:none;transition:gap 0.2s}
+.event-link{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:11px;font-weight:600;color:var(--cta);text-decoration:none;transition:gap 0.2s}
 .event-link:hover{gap:10px}
 .posts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.post-card{background:var(--surface);border:1px solid var(--border);padding:22px;transition:all 0.3s;text-decoration:none;display:block;opacity:0;transform:translateY(16px);border-radius:8px}
+.post-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;transition:all 0.3s;text-decoration:none;display:block;opacity:0;transform:translateY(16px);box-shadow:0 2px 8px rgba(14,36,68,0.04)}
 .post-card.show{opacity:1;transform:translateY(0)}
-.post-card:hover{border-color:var(--border2);background:var(--surface2);transform:translateY(-2px)!important}
+.post-card:hover{border-color:var(--cta);transform:translateY(-2px)!important;box-shadow:0 8px 24px rgba(14,36,68,0.08)}
 .post-meta{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
-.post-title{font-size:14px;font-weight:500;color:var(--text);line-height:1.5;margin-bottom:8px}
+.post-title{font-size:14px;font-weight:600;color:var(--navy);line-height:1.5;margin-bottom:8px}
 .post-excerpt{font-size:12px;color:var(--text2);line-height:1.65;font-weight:300}
-.post-arrow{margin-top:12px;font-size:11px;color:var(--gold);font-weight:500}
+.post-arrow{margin-top:12px;font-size:11px;color:var(--cta);font-weight:600}
 
 /* AWARDS */
 #awards{background:var(--bg2)}
-.awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.award-card{background:var(--surface);border:1px solid var(--border);padding:30px;transition:all 0.3s;opacity:0;transform:translateY(16px)}
+.awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.award-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:30px;transition:all 0.3s;opacity:0;transform:translateY(16px);box-shadow:0 2px 8px rgba(14,36,68,0.04)}
 .award-card.show{opacity:1;transform:translateY(0)}
-.award-card:hover{background:var(--surface2);border-color:var(--gold)}
+.award-card:hover{transform:translateY(-3px)!important;box-shadow:0 10px 28px rgba(14,36,68,0.09);border-color:var(--navy)}
 .award-from{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.award-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin-bottom:10px}
+.award-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:10px;color:var(--navy)}
 .award-desc{font-size:12px;color:var(--text2);line-height:1.7;font-weight:300}
 
 /* CONTACT */
-#contact{background:var(--bg);border-top:1px solid var(--border)}
+#contact{background:var(--surface);border-top:1px solid var(--border)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .contact-intro{font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:32px;font-weight:300}
 .clinks{display:flex;flex-direction:column;gap:10px}
-.clink{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:13px;border-radius:12px;transition:all 0.2s}
+.clink{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg);border:1.5px solid var(--border);text-decoration:none;color:var(--navy);font-size:13px;border-radius:12px;transition:all 0.2s;font-weight:500}
 .clink:hover{border-color:var(--cta);color:var(--cta);background:var(--cta-dim);transform:translateX(4px)}
 .clink-icon{font-size:16px;width:20px;text-align:center}
 .clink-lbl{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text3);display:block;margin-bottom:2px}
-.book-box{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--cta);padding:40px;border-radius:16px}
-.book-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:10px}
-.book-desc{font-size:13px;color:var(--text2);margin-bottom:28px;line-height:1.7;font-weight:300}
-.avail{font-size:11px;color:var(--text3);margin-top:14px;text-align:center}
+.book-box{background:var(--navy);border-radius:20px;padding:40px;box-shadow:0 16px 48px rgba(14,36,68,0.15)}
+.book-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin-bottom:10px;color:white}
+.book-desc{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:28px;line-height:1.7;font-weight:300}
+.avail{font-size:11px;color:rgba(255,255,255,0.3);margin-top:14px;text-align:center}
 
-footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px;display:flex;justify-content:space-between;align-items:center}
-.foot-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold)}
-.foot-copy{font-size:11px;color:var(--text3)}
+footer{background:var(--navy);padding:28px 60px;display:flex;justify-content:space-between;align-items:center}
+.foot-name{font-family:'Playfair Display',serif;font-size:16px;color:#fbbf24}
+.foot-copy{font-size:11px;color:rgba(255,255,255,0.3)}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2)}::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2)}::-webkit-scrollbar-thumb:hover{background:var(--navy)}
 
-@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}section{padding:60px 20px}.hero{grid-template-columns:1fr;padding:100px 20px 60px;gap:40px}.hero-stats-panel{display:none}.impact-grid,.events-grid,.awards-grid,.exp-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:32px}.about-photo{width:100%;height:200px}.contact-grid,.comm-intro{grid-template-columns:1fr;gap:40px}.posts-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:10px;text-align:center}.sticky-cta{bottom:16px;right:16px}}
+@media(max-width:768px){
+  nav{padding:0 20px}.nav-links{display:none}section{padding:60px 20px}
+  .hero{grid-template-columns:1fr;padding:100px 20px 60px;gap:40px}.hero-stats-panel{display:none}.hero-dots{display:none}
+  .impact-grid,.events-grid,.awards-grid,.exp-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:32px}.about-photo{width:100%;height:200px}
+  .contact-grid,.comm-intro{grid-template-columns:1fr;gap:40px}.posts-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:10px;text-align:center}.sticky-cta{bottom:16px;right:16px}
+}
 </style>
 </head>
 <body>
 
-<a href="#contact" class="sticky-cta">✉ Get In Touch</a>
+<!-- STICKY CTA — goes to contact section -->
+<a href="#contact" class="sticky-cta">Get In Touch</a>
 
+<!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">Saqib Ameen Subhan</a>
   <ul class="nav-links">
@@ -222,21 +238,25 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px
     <li><a href="#experience">Journey</a></li>
     <li><a href="#community">Community</a></li>
     <li><a href="#awards">Awards</a></li>
-    <li><a href="https://calendly.com/saqib-ameen86/30min" target="_blank" class="nav-cta-btn">Book a Call</a></li>
+    <li><a href="#contact" class="nav-cta-btn">Get In Touch</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-orb"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-dots"></div>
   <div class="hero-left">
-    <div class="badge"><span class="badge-dot"></span>14 Years Database Engineering &nbsp;·&nbsp; MongoDB Community Creator &nbsp;·&nbsp; 1 of 45 Globally</div>
+    <div class="badge">
+      <span class="badge-dot"></span>
+      14 Years Database Engineering &nbsp;·&nbsp; MongoDB Community Creator &nbsp;·&nbsp; 1 of 45 Globally
+    </div>
     <h1>Saqib<br><span class="name-hl">Ameen</span><br>Subhan</h1>
     <div class="hero-role">Database Architect &nbsp;·&nbsp; Platform Engineer &nbsp;·&nbsp; Engineering Leader</div>
-    <p class="hero-desc">14 years building the data foundations that high-scale systems depend on. I architect distributed database platforms, eliminate operational toil through intelligent automation, and translate complex technical problems into measurable business outcomes.</p>
+    <p class="hero-desc">14 years building the data foundations that high-scale systems depend on. I architect distributed database platforms, eliminate operational toil through intelligent automation, and translate complex technical problems into measurable business outcomes across SaaS, FinTech, Banking, and Gaming.</p>
     <div class="hero-btns">
-      <a href="https://calendly.com/saqib-ameen86/30min" target="_blank" class="btn-green" onclick="gtag('event','hero_cta',{'event_label':'Book Call'})">Book a 30-Min Call</a>
-      <a href="https://drive.google.com/file/d/16cGZIILKDws0Lm30WkVN6rVaKi7t16fk/view?usp=sharing" target="_blank" class="btn-ghost" onclick="gtag('event','resume_dl',{'event_label':'Resume Hero'})">Download Resume</a>
+      <a href="https://calendly.com/saqib-ameen86/30min" target="_blank" class="btn-blue" onclick="gtag('event','hero_cta',{'event_label':'Book Call'})">Book a 30-Min Call</a>
+      <a href="https://drive.google.com/file/d/16cGZIILKDws0Lm30WkVN6rVaKi7t16fk/view?usp=sharing" target="_blank" class="btn-navy" onclick="gtag('event','resume_dl',{'event_label':'Resume Hero'})">Download Resume</a>
     </div>
   </div>
   <div class="hero-stats-panel">
@@ -256,7 +276,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px
   <h2>Numbers that <em>matter</em></h2>
   <div class="impact-grid">
     <div class="impact-card"><span class="impact-icon">⚡</span><div class="impact-num">48%</div><div class="impact-title">Infrastructure Cost Reduction</div><div class="impact-desc">Monolith to 65-cluster migration at Contentstack. Zero downtime. <strong>$350,000 saved annually.</strong> 8 months. Thank You Award.</div></div>
-    <div class="impact-card"><span class="impact-icon">🔄</span><div class="impact-num">12min</div><div class="impact-title">Autoscaling Pipeline</div><div class="impact-desc">CloudWatch → SNS/SQS → rolling node upgrades. <strong>Zero application impact.</strong> Python + boto3.</div></div>
+    <div class="impact-card"><span class="impact-icon">🔄</span><div class="impact-num">12min</div><div class="impact-title">Autoscaling Pipeline</div><div class="impact-desc">CloudWatch → SNS/SQS → rolling node upgrades with health checks. <strong>Zero application impact.</strong> Python + boto3.</div></div>
     <div class="impact-card"><span class="impact-icon">🌐</span><div class="impact-num">30hrs</div><div class="impact-title">Regional DR Recovery</div><div class="impact-desc">Full recovery after AWS ME-Central-1 outage. UAE Central Bank regulations. <strong>Back online before the banks.</strong></div></div>
     <div class="impact-card"><span class="impact-icon">🏗️</span><div class="impact-num">1000+</div><div class="impact-title">Node Clusters at Visa</div><div class="impact-desc">SME for Cassandra and MongoDB at <strong>global financial transaction scale.</strong> Multi-DC, multi-region private cloud.</div></div>
     <div class="impact-card"><span class="impact-icon">🤖</span><div class="impact-num">Self-Serve</div><div class="impact-title">DB Provisioning Portal</div><div class="impact-desc">Built at Visa. Developers provision via UI. <strong>Auto-decommissioned after TTL.</strong> Zero DBA involvement.</div></div>
@@ -270,13 +290,14 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px
   <h2>Built on <em>depth,</em> not just breadth</h2>
   <div class="about-grid">
     <div class="about-photo">
-      <!-- REPLACE src="" WITH YOUR PHOTO URL or upload photo to GitHub and use the raw link -->
-      <img src="https://raw.githubusercontent.com/saqibameen86/saqib/main/Saqib%20Resume%20DP.jpg" alt="Saqib Ameen Subhan" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>👤</span><p>Add your photo here</p></div>'">
+      <img src="https://raw.githubusercontent.com/saqibameen86/saqib/main/Saqib%20Resume%20DP.jpg"
+           alt="Saqib Ameen Subhan"
+           onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>👤</span><p>Add your photo here</p></div>'">
     </div>
     <div class="about-text">
-      <p>I have spent 14 years at the intersection where <strong>databases meet business outcomes.</strong> From classified government networks in Abu Dhabi to FinTech platforms processing millions of transactions, from 1,000-node Cassandra clusters at Visa to 65-cluster SaaS migrations at Contentstack — I operate in environments where database failures are not an option.</p>
-      <p>My approach: <strong>understand the business problem first,</strong> then select the right technology. I have worked across MongoDB, Cassandra, Aurora PostgreSQL, MySQL, ClickHouse, Redis, Neo4j, DynamoDB, Oracle, and SQL Server.</p>
-      <p>Currently building AI-assisted database operations — personal agents, vector search architectures, and agentic infrastructure provisioning. <strong>The future of database operations is not manual.</strong></p>
+      <p>I have spent 14 years at the intersection where <strong>databases meet business outcomes.</strong> From classified government networks in Abu Dhabi to FinTech platforms processing millions of transactions, from 1,000-node Cassandra clusters at Visa to 65-cluster migrations at Contentstack — I operate in environments where database failures are not an option.</p>
+      <p>My approach: <strong>understand the business problem first,</strong> then select the right technology. I have worked across MongoDB, Cassandra, Aurora PostgreSQL, MySQL, ClickHouse, Redis, Neo4j, DynamoDB, Oracle, and SQL Server. Equally effective as a hands-on platform engineer, solutions architect, pre-sales technical advisor, and engineering leader.</p>
+      <p>Currently building AI-assisted database operations — personal agents, vector search, agentic infrastructure provisioning. <strong>The future of database operations is not manual.</strong></p>
       <div class="tags-row">
         <span class="tag">SaaS</span><span class="tag">FinTech</span><span class="tag">Banking</span><span class="tag">Gaming</span><span class="tag">Government</span><span class="tag">Social Media</span><span class="tag">UAE · Singapore · India</span>
       </div>
@@ -311,12 +332,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px
   <div class="sec-label">Career Journey</div>
   <h2>14 years of <em>consequential</em> work</h2>
   <div class="tl">
-    <div class="tl-item"><div class="tl-date">Mar 2025 — Present</div><div class="tl-co">Avrioc Technologies LLC</div><div class="tl-role">Senior Database Architect · Abu Dhabi, UAE</div><ul class="tl-list"><li>Architecting across <strong>4 concurrent product lines</strong> — FinTech, Social Media, Gaming, Communications</li><li>Full DR recovery in <strong>30 hours</strong> after AWS ME-Central-1 outage during Middle East conflict</li><li>ClickHouse PoC — <strong>10x compression</strong>, sub-millisecond analytics vs MySQL</li></ul></div>
+    <div class="tl-item"><div class="tl-date">Mar 2025 — Present</div><div class="tl-co">Avrioc Technologies LLC</div><div class="tl-role">Senior Database Architect · Abu Dhabi, UAE</div><ul class="tl-list"><li>Architecting across <strong>4 concurrent product lines</strong> — FinTech, Social Media, Gaming, Communications</li><li>Full DR recovery in <strong>30 hours</strong> after AWS ME-Central-1 outage during Middle East conflict</li><li>ClickHouse PoC — <strong>10x compression</strong>, sub-millisecond analytics vs MySQL baseline</li></ul></div>
     <div class="tl-item"><div class="tl-date">Jan 2022 — Mar 2025</div><div class="tl-co">Contentstack Inc.</div><div class="tl-role">Senior Manager — Database Administration · Bangalore, India</div><ul class="tl-list"><li><strong>48% COGS reduction ($350K/yr)</strong> — 1 monolith to 65 clusters, 8 months, zero downtime</li><li>In-house autoscaling pipeline — <strong>12-minute</strong> rolling upgrades, zero application impact</li><li>MongoDB Atlas Vector Search PoC shipped to production for AI content generation</li><li>Built team from scratch — <strong>2 junior hires now lead teams</strong> · Won Thank You Award</li></ul></div>
     <div class="tl-item"><div class="tl-date">Jun 2019 — Jan 2022</div><div class="tl-co">Visa Inc.</div><div class="tl-role">Senior Database Engineer / Associate Manager · Singapore</div><ul class="tl-list"><li>SME for <strong>1,000+ node Cassandra and MongoDB</strong> at global financial transaction scale</li><li>Self-serve provisioning portal — <strong>eliminated DBA bottleneck</strong> · Multiple GoBeyond Awards</li></ul></div>
     <div class="tl-item"><div class="tl-date">May 2018 — Jun 2019</div><div class="tl-co">Accenture Services</div><div class="tl-role">NoSQL Databases Team Lead · Bangalore, India</div><ul class="tl-list"><li>Led 5-member team for premier US financial services client</li><li>UAE government NoSQL transition · <strong>Core Value Champion Award</strong></li></ul></div>
     <div class="tl-item"><div class="tl-date">Dec 2016 — Apr 2018</div><div class="tl-co">Emaratech</div><div class="tl-role">Database Administrator · Abu Dhabi, UAE</div><ul class="tl-list"><li>Mission-critical government databases — Oracle, MSSQL, Cassandra</li><li><strong>GEM Award</strong> for GoldenGate monitoring over DataDiode for classified networks</li></ul></div>
-    <div class="tl-item"><div class="tl-date">Aug 2012 — Nov 2016</div><div class="tl-co">Societe Generale</div><div class="tl-role">Database Administrator · Bangalore, India</div><ul class="tl-list"><li>Enterprise banking — Oracle, SQL Server, Sybase · Data Guard · SQL Server Mirroring · GoldenGate</li></ul></div>
+    <div class="tl-item"><div class="tl-date">Aug 2012 — Nov 2016</div><div class="tl-co">Societe Generale</div><div class="tl-role">Database Administrator · Bangalore, India</div><ul class="tl-list"><li>Enterprise banking — Oracle, SQL Server, Sybase · Data Guard · GoldenGate replication</li></ul></div>
   </div>
 </section>
 
@@ -328,25 +349,25 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px
     <div class="comm-big">
       <div class="comm-num">45</div>
       <div class="comm-sub">MongoDB Community<br>Creators Worldwide</div>
-      <div style="margin-top:16px;font-size:13px;color:var(--cta);font-weight:500">You are looking at one of them.</div>
+      <div class="comm-green">You are looking at one of them.</div>
     </div>
-    <div class="comm-text">The MongoDB Community Creator program selects fewer than 50 engineers globally each year. I was selected in <strong>2024</strong> — one of the very few from India and the UAE — and was a Finalist in the MongoDB Community Champion Program.<br><br>I lead the <strong>MongoDB Abu Dhabi User Group</strong>, have been invited as a <strong>panelist at industry conferences</strong>, speak regularly on distributed systems and AI-native data operations, and hold a <strong>LinkedIn Top Database Voice</strong> designation. Community building is not something I do for recognition — it is how I stay sharp.</div>
+    <div class="comm-text">The MongoDB Community Creator program selects fewer than 50 engineers globally each year. I was selected in <strong>2024</strong> — one of the very few from India and the UAE — and was a Finalist in the MongoDB Community Champion Program.<br><br>I lead the <strong>MongoDB Abu Dhabi User Group</strong>, have been invited as a <strong>panelist at industry conferences</strong>, speak regularly on distributed systems and AI-native data operations, and hold a <strong>LinkedIn Top Database Voice</strong> designation.<br><br>Community building is not something I do for recognition — it is how I stay sharp.</div>
   </div>
   <div class="sec-label" style="margin-bottom:20px">Speaking & Events</div>
   <div class="events-grid">
-    <div class="event-card"><div class="event-type">Panelist</div><div class="event-title">MongoDB Community Panel</div><div class="event-desc">Invited as panelist for the MongoDB Community Creator program — scaling distributed systems and community best practices globally.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7272581129554042881/" target="_blank" class="event-link">View Post →</a></div>
-    <div class="event-card"><div class="event-type">Community Leadership</div><div class="event-title">MongoDB Abu Dhabi User Group</div><div class="event-desc">Leading the MongoDB User Group in Abu Dhabi — organising meetups, technical talks, and connecting professionals across the UAE.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7246904178466324481/" target="_blank" class="event-link">View Post →</a></div>
-    <div class="event-card"><div class="event-type">Conference Speaker</div><div class="event-title">Technical Conference Talk</div><div class="event-desc">Regular technical speaker at industry conferences on MongoDB architecture, DRE, and AI-native database operations.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7388086847618539521/" target="_blank" class="event-link">View Post →</a></div>
-    <div class="event-card"><div class="event-type">Recognition</div><div class="event-title">MongoDB Community Creator 2024</div><div class="event-desc">Selected as 1 of 45 MongoDB Community Creators globally. Recognised for consistent content, leadership, and technical evangelism.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7440556582075232256/" target="_blank" class="event-link">View Post →</a></div>
-    <div class="event-card"><div class="event-type">Technical Content</div><div class="event-title">LinkedIn Top Database Voice</div><div class="event-desc">Publishing regularly on distributed systems, Aurora PostgreSQL, cost optimisation, and AI-native database operations.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7269962240529711104/" target="_blank" class="event-link">View Post →</a></div>
-    <div class="event-card"><div class="event-type">Panelist</div><div class="event-title">Industry Expert Panel</div><div class="event-desc">Invited as expert panelist on database architecture, cloud migration strategies, and the future of AI-driven database operations.</div><a href="https://www.linkedin.com/in/saqibameen" target="_blank" class="event-link">Connect on LinkedIn →</a></div>
+    <div class="event-card"><div class="event-type">Panelist</div><div class="event-title">MongoDB Community Panel</div><div class="event-desc">Invited as panelist for the MongoDB Community Creator program — scaling distributed systems globally.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7272581129554042881/" target="_blank" class="event-link">View Post →</a></div>
+    <div class="event-card"><div class="event-type">Community Leadership</div><div class="event-title">MongoDB Abu Dhabi User Group</div><div class="event-desc">Leading the MongoDB User Group in Abu Dhabi — meetups, technical talks, connecting professionals across the UAE.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7246904178466324481/" target="_blank" class="event-link">View Post →</a></div>
+    <div class="event-card"><div class="event-type">Conference Speaker</div><div class="event-title">Technical Conference Talk</div><div class="event-desc">Regular technical speaker on MongoDB architecture, DRE, and AI-native database operations.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7388086847618539521/" target="_blank" class="event-link">View Post →</a></div>
+    <div class="event-card"><div class="event-type">Recognition</div><div class="event-title">MongoDB Community Creator 2024</div><div class="event-desc">1 of 45 MongoDB Community Creators globally — content, leadership, and technical evangelism.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7440556582075232256/" target="_blank" class="event-link">View Post →</a></div>
+    <div class="event-card"><div class="event-type">Technical Content</div><div class="event-title">LinkedIn Top Database Voice</div><div class="event-desc">Publishing regularly on distributed systems, Aurora PostgreSQL, cost optimisation, and AI-native operations.</div><a href="https://www.linkedin.com/feed/update/urn:li:activity:7269962240529711104/" target="_blank" class="event-link">View Post →</a></div>
+    <div class="event-card"><div class="event-type">Panelist</div><div class="event-title">Industry Expert Panel</div><div class="event-desc">Invited as expert panelist on database architecture, cloud migration, and AI-driven database operations.</div><a href="https://www.linkedin.com/in/saqibameen" target="_blank" class="event-link">Connect on LinkedIn →</a></div>
   </div>
   <div class="sec-label" style="margin-bottom:20px">Recent Posts</div>
   <div class="posts-grid">
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7272581129554042881/" target="_blank" class="post-card"><div class="post-meta">MongoDB Community · Panel</div><div class="post-title">What it means to be a MongoDB Community Creator — and what I learned from the panel</div><div class="post-excerpt">Insights from being selected as 1 of 45 MongoDB Community Creators globally.</div><div class="post-arrow">Read on LinkedIn →</div></a>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440556582075232256/" target="_blank" class="post-card"><div class="post-meta">Community Creator · 2024</div><div class="post-title">MongoDB Community Creator 2024 — the recognition and what comes next</div><div class="post-excerpt">Reflections on community building, technical evangelism, and representing MongoDB globally.</div><div class="post-arrow">Read on LinkedIn →</div></a>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7246904178466324481/" target="_blank" class="post-card"><div class="post-meta">Database Architecture · Technical</div><div class="post-title">Lessons from migrating one monolith to 65 clusters — what nobody tells you</div><div class="post-excerpt">The real story of the 48% cost reduction — the noisy neighbor problem and what I'd do differently.</div><div class="post-arrow">Read on LinkedIn →</div></a>
-    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7388086847618539521/" target="_blank" class="post-card"><div class="post-meta">Community Building · Leadership</div><div class="post-title">Building the MongoDB Abu Dhabi User Group from the ground up</div><div class="post-excerpt">How I started and grew the MongoDB User Group in Abu Dhabi — the events and why community matters.</div><div class="post-arrow">Read on LinkedIn →</div></a>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7272581129554042881/" target="_blank" class="post-card"><div class="post-meta">MongoDB Community · Panel</div><div class="post-title">What it means to be a MongoDB Community Creator — and what I learned</div><div class="post-excerpt">Insights from being selected as 1 of 45 MongoDB Community Creators globally.</div><div class="post-arrow">Read on LinkedIn →</div></a>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440556582075232256/" target="_blank" class="post-card"><div class="post-meta">Community Creator · 2024</div><div class="post-title">MongoDB Community Creator 2024 — the recognition and what comes next</div><div class="post-excerpt">Reflections on community building and representing MongoDB globally.</div><div class="post-arrow">Read on LinkedIn →</div></a>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7246904178466324481/" target="_blank" class="post-card"><div class="post-meta">Database Architecture</div><div class="post-title">Lessons from migrating one monolith to 65 clusters — what nobody tells you</div><div class="post-excerpt">The real story of the 48% cost reduction and what I'd do differently.</div><div class="post-arrow">Read on LinkedIn →</div></a>
+    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7388086847618539521/" target="_blank" class="post-card"><div class="post-meta">Community Building</div><div class="post-title">Building the MongoDB Abu Dhabi User Group from the ground up</div><div class="post-excerpt">How I started and grew the MongoDB User Group in Abu Dhabi.</div><div class="post-arrow">Read on LinkedIn →</div></a>
   </div>
 </section>
 
@@ -356,10 +377,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px
   <h2>Work that <em>gets noticed</em></h2>
   <div class="awards-grid">
     <div class="award-card"><div class="award-from">MongoDB Inc · 2024</div><div class="award-name">MongoDB Community Creator</div><div class="award-desc">1 of 45 worldwide. Finalist, MongoDB Community Champion 2024.</div></div>
-    <div class="award-card"><div class="award-from">Contentstack · 2023</div><div class="award-name">Thank You Award</div><div class="award-desc">48% reduction in database infrastructure COGS — $350K annual savings — zero downtime.</div></div>
+    <div class="award-card"><div class="award-from">Contentstack · 2023</div><div class="award-name">Thank You Award</div><div class="award-desc">48% reduction in database COGS — $350K annual savings — zero customer downtime.</div></div>
     <div class="award-card"><div class="award-from">Visa Inc · 2020–2021</div><div class="award-name">GoBeyond Award (Multiple)</div><div class="award-desc">Multiple awards for large-scale NoSQL platform engineering at global financial transaction scale.</div></div>
-    <div class="award-card"><div class="award-from">Emaratech · 2018</div><div class="award-name">GEM Award</div><div class="award-desc">Novel GoldenGate monitoring solution over DataDiode for classified UAE government networks.</div></div>
-    <div class="award-card"><div class="award-from">Accenture · 2019</div><div class="award-name">Core Value Champion</div><div class="award-desc">Exceptional performance and cross-functional leadership on US financial services client.</div></div>
+    <div class="award-card"><div class="award-from">Emaratech · 2018</div><div class="award-name">GEM Award</div><div class="award-desc">Novel GoldenGate monitoring over DataDiode for classified UAE government networks.</div></div>
+    <div class="award-card"><div class="award-from">Accenture · 2019</div><div class="award-name">Core Value Champion</div><div class="award-desc">Exceptional performance and leadership on high-priority US financial services client.</div></div>
     <div class="award-card"><div class="award-from">LinkedIn · Ongoing</div><div class="award-name">Top Database Voice</div><div class="award-desc">Recognised for regular, high-quality contributions to database engineering discussions globally.</div></div>
   </div>
 </section>
@@ -372,17 +393,27 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:28px 60px
     <div>
       <p class="contact-intro">Open to Staff and Principal database engineering roles, Director-level leadership, solutions architecture advisory, and consulting engagements. If you have a database problem that keeps you up at night — that is usually a good starting point.</p>
       <div class="clinks">
-        <a href="mailto:saqib.ameen86@gmail.com" class="clink" onclick="gtag('event','contact',{'event_label':'Email'})"><span class="clink-icon">✉</span><div><span class="clink-lbl">Email</span>saqib.ameen86@gmail.com</div></a>
-        <a href="https://www.linkedin.com/in/saqibameen" target="_blank" class="clink" onclick="gtag('event','contact',{'event_label':'LinkedIn'})"><span class="clink-icon">in</span><div><span class="clink-lbl">LinkedIn</span>linkedin.com/in/saqibameen</div></a>
-        <a href="https://drive.google.com/file/d/16cGZIILKDws0Lm30WkVN6rVaKi7t16fk/view?usp=sharing" target="_blank" class="clink" onclick="gtag('event','resume_dl',{'event_label':'Resume Contact'})"><span class="clink-icon">↓</span><div><span class="clink-lbl">Resume</span>Download PDF · Updated 2026</div></a>
+        <a href="mailto:saqib.ameen86@gmail.com" class="clink" onclick="gtag('event','contact',{'event_label':'Email'})">
+          <span class="clink-icon">✉</span><div><span class="clink-lbl">Email</span>saqib.ameen86@gmail.com</div>
+        </a>
+        <a href="https://www.linkedin.com/in/saqibameen" target="_blank" class="clink" onclick="gtag('event','contact',{'event_label':'LinkedIn'})">
+          <span class="clink-icon">in</span><div><span class="clink-lbl">LinkedIn</span>linkedin.com/in/saqibameen</div>
+        </a>
+        <a href="https://drive.google.com/file/d/16cGZIILKDws0Lm30WkVN6rVaKi7t16fk/view?usp=sharing" target="_blank" class="clink" onclick="gtag('event','resume_dl',{'event_label':'Resume Contact'})">
+          <span class="clink-icon">↓</span><div><span class="clink-lbl">Resume</span>Download PDF · Updated 2026</div>
+        </a>
       </div>
     </div>
     <div>
       <div class="book-box">
         <div class="book-title">Book a 30-Min Call</div>
         <p class="book-desc">Pick a time directly on my calendar. No back-and-forth. Confirmed instantly. Available globally via video call.</p>
-        <a href="https://calendly.com/saqib-ameen86/30min" target="_blank" class="btn-green" style="width:100%;text-align:center;display:block;border-radius:40px;margin-bottom:16px" onclick="gtag('event','calendly_click',{'event_label':'Book Box'})">Open Calendar & Book a Time</a>
-        <div class="avail">✦ &nbsp; Bangalore, India (IST) &nbsp;·&nbsp; Remote-first &nbsp;·&nbsp; Available globally</div>
+        <a href="https://calendly.com/saqib-ameen86/30min" target="_blank" class="btn-blue"
+           style="width:100%;text-align:center;display:block;border-radius:40px;margin-bottom:16px"
+           onclick="gtag('event','calendly_click',{'event_label':'Book Box'})">
+          Open Calendar and Book a Time
+        </a>
+        <div class="avail">Bangalore, India (IST) &nbsp;·&nbsp; Remote-first &nbsp;·&nbsp; Available globally</div>
       </div>
     </div>
   </div>
@@ -400,7 +431,7 @@ function runCounter(el){const t=parseInt(el.dataset.target);const p=el.dataset.p
 const co=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){runCounter(en.target);co.unobserve(en.target);}});});
 document.querySelectorAll('[data-target]').forEach(el=>co.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id==='#')return;const t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
-window.addEventListener('scroll',()=>{let cur='';document.querySelectorAll('section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--text)':'';});});
+window.addEventListener('scroll',()=>{let cur='';document.querySelectorAll('section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});document.querySelectorAll('.nav-links a').forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--navy)':'';});});
 </script>
 </body>
 </html>
