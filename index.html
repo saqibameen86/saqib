@@ -204,18 +204,126 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:32px 60px
 @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2)}::-webkit-scrollbar-thumb:hover{background:var(--amber)}
 
-@media(max-width:768px){
-  nav{padding:16px 24px}.nav-links{display:none}
-  section{padding:60px 24px}.hero{padding:100px 24px 60px}
-  .hero-stats{display:none}
-  .achievements-grid,.recognition-grid,.events-grid{grid-template-columns:1fr}
-  .about-grid{grid-template-columns:1fr;gap:40px}.about-photo{width:100%;height:200px}
+/* HAMBURGER */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;z-index:110}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--amber);transition:all 0.3s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE DRAWER */
+.nav-drawer{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,12,20,0.97);z-index:105;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;transition:opacity 0.3s}
+.nav-drawer.open{opacity:1}
+.nav-drawer a{color:var(--text2);text-decoration:none;font-size:14px;font-weight:400;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;padding:8px 0}
+.nav-drawer a:hover{color:var(--amber)}
+.nav-drawer .drawer-cta{background:var(--amber);color:var(--bg)!important;padding:12px 32px;margin-top:8px}
+
+/* ── TABLET (768px – 1024px) ── */
+@media(max-width:1024px){
+  nav{padding:20px 32px}
+  section{padding:80px 40px}
+  .hero{padding:120px 40px 80px}
+  .hero-stats{right:32px}
+  .achievements-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:160px 1fr;gap:40px}
+  .about-grid .credentials{grid-column:1/-1}
   .expertise-grid{grid-template-columns:1fr 1fr}
-  .contact-grid{grid-template-columns:1fr;gap:40px}
-  .community-grid{grid-template-columns:1fr;gap:24px}
+  .recognition-grid{grid-template-columns:1fr 1fr}
+  .events-grid{grid-template-columns:1fr 1fr}
+  .certs{grid-template-columns:1fr 1fr}
+  .achievements{grid-template-columns:1fr 1fr}
+  footer{padding:24px 40px}
+}
+
+/* ── MOBILE (max 768px) ── */
+@media(max-width:768px){
+  /* Disable custom cursor on touch */
+  body{cursor:auto}
+  .cursor,.cursor-ring{display:none}
+
+  /* Nav → hamburger */
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .nav-drawer{display:flex}
+
+  /* Sections */
+  section{padding:60px 20px}
+
+  /* Hero */
+  .hero{min-height:100svh;padding:90px 20px 60px;align-items:flex-start}
+  .hero-grid{display:none}
+  .hero-badge{font-size:9px;letter-spacing:1px;padding:5px 10px;flex-wrap:wrap;line-height:1.6;margin-bottom:20px}
+  h1{font-size:clamp(42px,12vw,64px);margin-bottom:10px}
+  .hero-title{font-size:10px;letter-spacing:2px;margin-bottom:20px}
+  .hero-desc{font-size:13px;margin-bottom:32px}
+  .hero-actions{flex-direction:column;gap:12px}
+  .btn-primary,.btn-outline{width:100%;text-align:center;padding:14px 20px}
+  .hero-stats{display:none}
+
+  /* Achievement cards */
+  .achievements-grid{grid-template-columns:1fr}
+  .achievement-card{padding:28px 20px}
+  .achievement-number{font-size:38px}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .about-photo{width:100%;height:240px}
+  .about-text p{font-size:13px}
+
+  /* Expertise */
+  .expertise-grid{grid-template-columns:1fr}
+  .expertise-card{padding:24px 20px}
+
+  /* Timeline */
+  .timeline{padding-left:24px}
+  .timeline-item::before{left:-28px;width:7px;height:7px}
+  .timeline-company{font-size:20px}
+  .timeline-highlights li{font-size:11.5px}
+
+  /* Recognition */
+  .recognition-grid{grid-template-columns:1fr}
+  .recognition-card{padding:24px 20px}
+  .certs{grid-template-columns:1fr}
+  .achievements{grid-template-columns:1fr}
+
+  /* Community block */
+  .community-block{padding:28px 20px}
+  .community-grid{grid-template-columns:1fr;gap:20px}
+  .community-number{font-size:60px}
+
+  /* Speaking */
+  .events-grid{grid-template-columns:1fr}
+  .event-card{padding:22px 18px}
   .posts-grid{grid-template-columns:1fr}
-  footer{flex-direction:column;gap:12px;text-align:center}
-  .sticky-cta{bottom:16px;right:16px}
+  .post-card{padding:20px 18px}
+
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .cal-box{padding:24px 20px}
+  .contact-intro{font-size:12px}
+
+  /* Footer */
+  footer{flex-direction:column;gap:10px;text-align:center;padding:24px 20px}
+
+  /* Sticky CTA */
+  .sticky-cta{bottom:16px;right:16px;padding:10px 18px;font-size:10px}
+
+  /* Section headings */
+  h2{margin-bottom:32px}
+}
+
+/* ── SMALL PHONES (max 390px) ── */
+@media(max-width:390px){
+  section{padding:48px 16px}
+  .hero{padding:80px 16px 48px}
+  h1{font-size:38px}
+  .hero-badge{font-size:8px}
+  .achievement-card{padding:22px 16px}
+  .community-block{padding:24px 16px}
+  .cal-box{padding:20px 16px}
+  .timeline{padding-left:20px}
+  .timeline-item::before{left:-24px}
 }
 </style>
 </head>
@@ -237,7 +345,21 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:32px 60px
     <li><a href="#community">Community</a></li>
     <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#achievements" class="drawer-link">Impact</a>
+  <a href="#about" class="drawer-link">About</a>
+  <a href="#expertise" class="drawer-link">Expertise</a>
+  <a href="#experience" class="drawer-link">Journey</a>
+  <a href="#recognition" class="drawer-link">Awards</a>
+  <a href="#community" class="drawer-link">Community</a>
+  <a href="#contact" class="drawer-cta">Get In Touch</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -250,7 +372,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:32px 60px
     <p class="hero-desc">14 years building the data foundations that high-scale systems depend on. I architect distributed database platforms, eliminate operational toil through intelligent automation, and translate complex technical problems into measurable business outcomes.</p>
     <div class="hero-actions">
       <a href="https://calendly.com/saqib-ameen86/30min" target="_blank" class="btn-primary" onclick="gtag('event','hero_cta',{'event_label':'Book Call'})">Book a 30-Min Call</a>
-      <a href="https://drive.google.com/file/d/1998hA3h7nLtBTQlEGDWooFbmePgMB6xE/view?usp=sharing" target="_blank" class="btn-outline" onclick="gtag('event','resume_dl',{'event_label':'Resume Hero'})">Download Resume</a>
+      <a href="https://drive.google.com/file/d/16cGZIILKDws0Lm30WkVN6rVaKi7t16fk/view?usp=sharing" target="_blank" class="btn-outline" onclick="gtag('event','resume_dl',{'event_label':'Resume Hero'})">Download Resume</a>
     </div>
   </div>
   <div class="hero-stats">
@@ -473,6 +595,22 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:32px 60px
 </footer>
 
 <script>
+// HAMBURGER MENU
+const hamburger=document.getElementById('hamburger');
+const navDrawer=document.getElementById('navDrawer');
+hamburger.addEventListener('click',()=>{
+  hamburger.classList.toggle('open');
+  navDrawer.classList.toggle('open');
+  document.body.style.overflow=navDrawer.classList.contains('open')?'hidden':'';
+});
+document.querySelectorAll('.nav-drawer a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    hamburger.classList.remove('open');
+    navDrawer.classList.remove('open');
+    document.body.style.overflow='';
+  });
+});
+
 // CUSTOM CURSOR
 const cursor=document.getElementById('cursor');
 const ring=document.getElementById('cursorRing');
