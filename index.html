@@ -268,7 +268,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:32px 60px
 
   /* About */
   .about-grid{grid-template-columns:1fr;gap:32px}
-  .about-photo{width:100%;height:240px}
+  .about-photo{width:100%;height:auto;aspect-ratio:4/5;max-height:420px}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
   .about-text p{font-size:13px}
 
   /* Expertise */
